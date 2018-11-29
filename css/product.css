@@ -1,0 +1,271 @@
+.all{
+    overflow: hidden;
+    width:100%;
+}
+banner{overflow: hidden; }
+banner>img{height:100%;margin: 0 auto}
+.nav-product{
+    background: #F0F3F3;
+    width:100%;
+    overflow: hidden
+}
+nav ul{
+    /*width:100%;*/
+    height: 51px;
+}
+nav ul li{
+    float: left;
+    width:40%;
+    text-align: center;
+    line-height: 51px;
+    margin:0 50px;
+
+}
+nav ul li.active{
+    color: #4385F8;
+    border-bottom: 1px solid #4685F8;
+}
+nav ul li:hover{
+    color: #4385F8;
+    border-bottom: 1px solid #4685F8;
+}
+.product-content {
+    width: 1400px;
+    margin: auto;
+    padding: 40px 0;
+    border-bottom: 1px solid #F0F3F7;
+    overflow: hidden;
+}
+.product-content .left{
+    /*width: 40%;*/
+    padding: 0px 65px;
+    margin:0
+}
+.product-content .left img{
+    width: 500px;
+    height: 300px;
+
+}
+.product-content .right {
+    width: 50%;
+    /*float: right;*/
+    text-align: center;
+}
+.top{
+    text-align: center;
+    font-size: 18px;
+    color: #5D5D5D;
+    line-height: 18px;
+    position: relative;
+}
+.top span.line{
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    width: 4px;
+    height: 15px;
+    border-radius: 3px;
+    background-color: #39f;
+    margin-left: -50px;
+}
+.product-content .right .bottom span{
+    text-indent: 2em;
+    font-size: 14px;
+    display: block;
+    color: #5D5D5D;
+    text-align: left;
+    line-height: 30px;
+    padding: 30px 40px 0 40px;
+    width:100%;
+}
+.product-content .right .bottom a{
+
+    display: inline-block;
+    background: #4685F8;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 15px;
+    margin: 30px auto;
+    border-radius: 3px;
+
+}
+/*========================demo===========================*/
+.demo{
+    border-bottom: 0;
+}
+.demo .top{
+    padding-bottom: 20px;
+}
+.demo .bottom{
+    text-align: center;
+}
+.demo .bottom span{
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    color: #657180;
+    line-height: 30px;
+}
+.demo .bottom span a{
+    color: #f00;
+    cursor: pointer;
+}
+.demo-nav{
+    text-align: center;
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+.demo-nav ul{
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+.demo-nav ul li{
+    display: inline-block;
+    width: 100px;
+    border: 0;
+    line-height: 35px;
+    text-align: center;
+    font-size: 14px;
+    color: #828282;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #eaeaea;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+}
+.demo-nav ul li:hover{
+    background: #39f;
+    color: #fff;
+}
+.demo-nav ul li.now{
+    background: #39f;
+    color: #fff;
+}
+
+/*===================================skin=============================*/
+.skin-content{
+    overflow: hidden;
+    width: 100%;
+}
+.skin-content .title{
+    text-align: center;
+    font-size: 18px;
+    color: #5D5D5D;
+    padding-bottom: 20px;
+    position: relative;
+}
+.skin-content .title span{
+    display: inline-block;
+    color: #0c0c25;
+    line-height: 40px;
+    font-size: 26px;
+    /* text-align: center; */
+    border-top: 1px solid #c1c2cc;
+    border-bottom: 1px solid #c1c2cc;
+    padding: 0 15px;
+}
+.skin-wrap{
+    width: 100%;
+    overflow: hidden;
+}
+.skin-wrap ul{
+    width: 1100px;
+    margin: 0 auto;
+}
+.skin-wrap ul li:nth-child(odd){
+    float: left;
+}
+.skin-wrap ul li:nth-child(even){
+    float: right;
+}
+.skin-wrap ul li{
+    width: 46%;
+    /*height: 320px;*/
+    float: left;
+    border-bottom: 1px dashed #c1c2cc;
+    padding: 60px 0;
+    margin: 0 2%;
+}
+.skin-wrap ul li p{
+    margin-top:10px;
+    display: block;
+    float: left;
+    font-size: 14px;
+    color: #34495e;
+    width: 31%;
+    line-height: 34px;
+}
+.skin-wrap ul li img{
+    width:100%;
+    height: 100%;
+}
+.skin-wrap ul li .mask{
+    position: relative;
+    height: 320px;
+    background-size: contain;
+    overflow: hidden;
+    border: 1px solid #eee;
+    background: url("../images/W-013.jpg") no-repeat center;
+    text-align: center;
+}
+.detail{
+    margin:auto;
+    display: block;
+
+}
+.mask>div{
+    position: absolute;
+    top:0;
+    left: 0;
+    width:100%;
+}
+.mask>div a{
+    display: none;
+    text-align: center;
+    line-height: 320px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+.mask:hover a{
+    display: block;
+    background-color: #000;
+    opacity: .7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
