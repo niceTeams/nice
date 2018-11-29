@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>框架</title>
+    <link rel="stylesheet" href="assets/css/base.css"/>
+    <link rel="stylesheet" href="assets/css/word-frame.css"/>
+</head>
+<body>
+<header>
+    <div class="w">
+        <h1 class="l">
+            <a>QUICK UI 文档</a>
+        </h1>
+        <ul class="r">
+            <li class="l "><a href="word-app.html">入门</a></li>
+            <li class="l appbottom"><a href="word-frame.html">框架</a></li>
+            <li class="l"><a href="word-component.html">组建</a></li>
+        </ul>
+    </div>
+
+</header>
+<main>
+    <div class="w">
+        <div class="l">
+            <ul>
+                <li>
+                    <a href="#">基础知识</a>
+                    <ul>
+                        <li ><a href="word-frame.html">框架概述</a></li>
+                        <li><a href="#">iframe相互调用详解</a></li>
+                        <li><a href="#">示例工程目录构成</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">皮肤机制</a>
+                    <ul>
+                        <li ><a href="word-frame-s1.html">皮肤原理与参数配置</a></li>
+                        <li><a href="word-frame-s2.html">框架动态换肤</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">框架基础功能</a>
+                    <ul>
+                        <li class="teshu"><a href="word-frame-s3.html">主框架页方法</a></li>
+                        <li><a href="#">内容页方法</a></li>
+                        <li><a href="word-frame-s4.html">常用正则表达式</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">资源索引</a>
+                    <ul>
+                        <li><a href="#">CSS库索引</a></li>
+                        <li><a href="word-frame-s5.html">基本图标库</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="r">
+            <h4>主框架页方法</h4>
+            <hr>
+            <h5>监听子页面的点击</h5>
+            <p>​ 有的时候会遇到这种情况，主页面弹出一个菜单，希望点击空白处关闭菜单。为主页面body绑定click，只有主页面部分生效，子页面由于是iframe，点击子页面区域并不能触发。这时可以在主页面添加下面的函数：</p>
+
+            <p class="code">
+                function iframeClickHandler (){<br>
+                //代码段<br>
+                }
+            </p>
+            <p>
+                把这个函数写在主页面中，当子页面被点击会执行该函数。不写这个函数则不会执行，此外这个函数只能写一次。
+            </p>
+            <h5>监听浏览器尺寸变化</h5>
+            <p>
+                有的时候会遇到让一个容器始终水平居中的情况。虽然可以使用margin控制，但是如果这个容器宽度不是固定的，就不行了。这时可以在主页面添加下面的函数：
+            </p>
+            <p class="code">
+                function mainResizeHandler(contentHeight,contentWidth) {
+                //代码段
+                }
+            </p>
+
+            <p>
+                把这个函数写在主页面中，当浏览器尺寸变化会执行该函数。会传递过来两个参数，分别是当前主框架的高度和宽度。不写这个函数则不会执行，此外这个函数只能写一次。
+            </p>
+            <h5>全屏与菜单收缩处理</h5>
+            <p>
+                框架提供了全屏方法fullScrennHander(state)用于控制全屏状态。
+            </p>
+            <p>
+                参数为true进行全屏，参数为false退出全屏。全屏处理采用H5全屏方式，低版本IE浏览器不支持全屏。
+            </p>
+            <p>框架还提供了方法switchMenu(state)用于控制左侧菜单状态。</p>
+            <p>参数为0代表收缩菜单，参数为1代表展开菜单。一般配合全屏使用，也可以单独使用。</p>
+            <p>场景1，在框架首页放置全屏按钮，处理的完整代码如下：</p>
+            <p class="code">
+                $(".right_toggle_fullscreen").click(function(){<br>
+                var iconBtn=$(this);<br>
+                if(iconBtn.hasClass('right_toggle_screen')){<br>
+                switchMenu(1);<br>
+                fullScrennHander(false);<br>
+                iconBtn.removeClass('right_toggle_screen');<br>
+                $(this).find("div").text("全屏");<br>
+                }<br>
+                else{<br>
+                top.switchMenu(0);<br>
+                if (typeof window.screenX === "number"){<br>
+                top.fullScrennHander(true);<br>
+                }<br>
+                else{<br>
+                top.Toast('showNoticeToast', '您的浏览器不支持全屏，如果需要，请手动按F11键。');<br>
+                }<br>
+                iconBtn.addClass('right_toggle_screen');<br>
+                $(this).find("div").text("还原");<br>
+                }<br>
+                });
+            </p>
+
+            <p>导航菜单menuNav.js中已经集成了全屏处理。</p>
+            <p>场景2，在内页中放置全屏按钮，处理的完整代码如下：</p>
+
+            <p class="code">
+                function maxGrid(){<br>
+                var btn=$("#fullscreenBtn").find("span");<br>
+                if(btn.hasClass('icon_actualscreen')){<br>
+                top.switchMenu(1);<br>
+                top.fullScrennHander(false);<br>
+                btn.removeClass('icon_actualscreen');<br>
+                btn.text("最大化表格");<br>
+                }<br>
+                else{<br>
+                top.switchMenu(0);<br>
+                if (typeof window.screenX === "number"){<br>
+                top.fullScrennHander(true);<br>
+                }<br>
+                else{<br>
+                top.Toast('showNoticeToast', '您的浏览器不支持全屏，如果需要，请手动按F11键。');<br>
+                }<br>
+                btn.addClass('icon_actualscreen');<br>
+                btn.text("还原窗口");<br>
+                }<br>
+                }
+            </p>
+            <p>打开页面显示等待提示</p>
+            <p> showProgressBar(title)</p>
+            <p>  该方法用于打开等待提示</p>
+            <p>  closeProgressBar()</p>
+            <p>该方法用于关闭进度条窗口</p>
+            <p>使用方式一般是：点击菜单后调用showProgressBar(title)打开页面，当子页面加载完毕，会自动触发closeProgressBar()方法。</p>
+
+            <p>内容页面也是同样的等待提示处理。</p>
+            <h5>Cookie操作</h5>
+            <p>在框架中操作Cookie方法如下： 创建cookie：</p>
+            <p class="code">
+                jQuery.jCookie('cookie','value')
+            </p>
+            <p>删除cookie：</p>
+            <p class="code">
+                Query.jCookie('cookie',null)
+            </p>
+            <p>读取cookie：</p>
+            <p class="code">
+                jQuery.jCookie('cookie')
+            </p>
+            <p>如果没有值则返回false</p>
+            <p>需要注意的是不能存数字0。如果确实要存0，则先转为string型。如</p>
+            <p class="code">
+                var i=0;<br>
+                jQuery.jCookie('mycook',i.toString())
+            </p>
+            <p>在读取时用</p>
+            <p class="code">
+                var cookValue=jQuery.jCookie('mycook');<br>
+                var useValue;<br>
+                if(cookValue!=false){<br>
+                useValue=parseInt(cookValue);<br>
+                }
+            </p>
+            <p>内容页面也是同样的cookie处理方式。</p>
+
+
+        </div>
+    </div>
+
+</main>
+
+</body>
+</html>
