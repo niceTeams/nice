@@ -1,0 +1,99 @@
+header{
+    display: flex;
+    width:100%;
+    justify-content:space-between;
+    height: 48px;
+    background: #fff;
+    line-height: 48px;
+    padding:0 15px;
+}
+header span{color:#000; font-size: 16px;display: block;}
+.edit{
+    position: absolute;
+    right: 15px;
+    top:0;
+    height: 48px;
+    line-height: 48px;
+    color: #ff3c25;
+    font-size: 13px;
+}
+/*===============================main===============================*/
+main{
+    background: #f6f6f6;
+    padding:0 10px;
+
+}
+.store .select{
+    height: 35px;
+    line-height: 35px;
+    font-size:14px ;
+    padding-top:5px;
+}
+.store .select input{
+    background: none;
+    width:15px;
+    height: 15px;
+    /*margin:10px 6px 0 6px;*/
+}
+.goodsInfo{margin-bottom: 10px;background: #fff;overflow: hidden; display: flex;padding:9px 0px; border-bottom: 1px solid #ddd; }
+.check{margin: auto 0; width: 41px;text-align: center;height: 100%}
+.check span{display: block}
+.pic{ width:105px;}
+.pic img{width:105px;}
+.detail{padding:0 4px 0 11px; width:214px;font-size: 11px}
+.desc{line-height: 21px;white-space: nowrap;text-overflow: ellipsis; overflow: hidden; }
+.sub{display: flex; justify-content: space-between; height: 26px; line-height: 26px}
+.price{color: #000;font-size: 14px;}
+.oper{width:90px; height: 26px; border:1px solid #ccc; display: flex;}
+.oper input{width:36px;border:0; text-align: center; }
+.oper span{width:41px; text-align: center; color: #ccc; line-height: 26px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
